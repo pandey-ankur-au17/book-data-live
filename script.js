@@ -41,7 +41,9 @@ app.get('/book', async (req, res) => {
     res.json(allProducts)
 })
 
-const PORT = 9080
-app.listen(PORT, () => {
-    console.log('Server Started')
-})
+console.log(`Heroku Port number is ${process.env.PORT}`)
+
+const prt =  process.env.PORT || 9080;
+
+
+app.listen(prt, () => console.log(`Server started at PORT ${prt}`))
